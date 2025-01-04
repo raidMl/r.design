@@ -177,10 +177,15 @@ const modal = document.getElementById('modal');
 
 function openModal() {
     modal.classList.add('active');
+    // document.getElementById("bodd").style.backgroundColor="##0003";
+    document.getElementById("bodd").style.opacity=0.2;
+
 }
 
 function closeModal() {
     modal.classList.remove('active');
+    document.getElementById("bodd").style.opacity=1;
+
 }
 
 

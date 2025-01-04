@@ -308,7 +308,7 @@
     .footer-box .form-control {
         box-shadow: none !important;
         margin-top: 25px;
-        border-radius: 0;
+        border-radius: 5px;
         border: none;
     }
     
@@ -360,31 +360,8 @@
         border-radius: 10px;
     }
     
-    @media (min-width: 350px) { /* xs and above */
-        #videoContainer video {
-            width: 99%;
-        }
-    }
-
-    @media (min-width: 576px) { /* sm and above */
-        #videoContainer video {
-            width: 80%;
-        }
-    }
-
-    @media (min-width: 768px) { /* md and above */
-        #videoContainer video {
-            width: 70%;
-        }
-    }
-
-    @media (min-width: 992px) { /* lg and above */
-        #videoContainer video {
-            width: 60%;
-        }
-    }
-
-
+    /* ------------------- MOdal------------- */
+    
     .modal-container {
         display: none;
         position: fixed;
@@ -392,18 +369,20 @@
         left: 50%;
         transform: translate(-50%, -50%) scale(0.8);
         width: 50%;
-        padding: 20px;
+        padding: 55px;
         background-color: white;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
         opacity: 0;
         z-index: 1000;
+        border-radius: 20px;
     }
     
     .modal-container.active {
         display: block;
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
+        box-shadow: 0px 2px 7px #110101a2;
     }
     
     .modal-header {
@@ -489,3 +468,32 @@
         transform: rotate(360deg);
     }
 }
+
+
+    @media (min-width: 350px) { /* xs and above */
+        #videoContainer video {
+            width: 99%;
+        }
+        .modal-container {width:85%}
+    }
+
+    @media (min-width: 576px) { /* sm and above */
+        #videoContainer video {
+            width: 80%;
+        }
+    }
+
+    @media (min-width: 768px) { /* md and above */
+        #videoContainer video {
+            width: 70%;
+        }
+    }
+
+    @media (min-width: 992px) { /* lg and above */
+        #videoContainer video {
+            width: 60%;
+        }
+        .modal-container {width:50%}
+
+    }
+

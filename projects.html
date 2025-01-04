@@ -207,7 +207,7 @@
                              <td  class="input1"><input type="text" value="${item.status}" class="unit" disabled></td>
                             <td  class="input1"><input type="text" value="${item.workingHours}" class="amount" disabled></td>
                             <td><button class="material-icons" onclick="deleteOrder('${item._id}')">delete_outline</button></td>
-                            <td><button class="material-icons"  onclick="getAllData('${item._id}')"><i class="fas fa-info-circle"></i></button></td>
+                            <td><button class="material-icons"  onclick="getAllData('${item._id}')"><i class="fas fa-info-circle" style='color:#457aa2'></i></button></td>
 
                         </tr>
                     `;
@@ -247,17 +247,21 @@
                     console.log(order);
                     const orderDetails = document.getElementById('orderDetails');
                     orderDetails.innerHTML = `
+                        <p><strong>Order Nbr:</strong> ${order._id}
                         <p><strong>Name:</strong> ${order.name}</p>
                         <p><strong>Email:</strong> ${order.email}</p>
                         <p><strong>Phone:</strong> ${order.phone}</p>
                         <p><strong>Address:</strong> ${order.address}</p>
                         <p><strong>Project Name:</strong> ${order.projectName}</p>
-                        <p><strong>City:</strong> ${order.description}</p>
-                          
+                        <p><strong>Description:</strong> ${order.description}</p>
+                    
                         <p><strong>Status:</strong> ${order.status}</p>
                         <p><strong>Working Hours:</strong> ${order.workingHours}</p>
-                        <p><strong>Working Hours:</strong> ${order.discount}</p>
-                        <p><strong>Working Hours:</strong> ${order.price}</p>
+                        <p><strong> discount:</strong> ${order.discount}</p>
+                        <p><strong> price:</strong> ${order.price}</p>
+                        <p><strong>orderDAte:</strong> ${order.createdAt}
+
+
 
 
                     `;
