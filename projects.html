@@ -169,7 +169,7 @@
     <script>
         function deleteOrder(_id) {
             if (confirm('do you want to delete this order?')) {
-                fetch(`http://localhost:3000/api/order/`+_id, {
+                fetch(`https://r-design-backend.vercel.app/api/order/`+_id, {
                     method: 'DELETE'
                 })
                 .then(response => {
@@ -188,7 +188,7 @@
         }
 
         // Fetch data from /api/facture/payed endpoint
-        fetch('http://localhost:3000/api/order')
+        fetch('https://r-design-backend.vercel.app/api/order')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -236,7 +236,7 @@
 
   
         function getAllData(id) {
-            fetch(`http://localhost:3000/api/order/`+id)
+            fetch(`https://r-design-backend.vercel.app/api/order/`+id)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
