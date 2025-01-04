@@ -135,7 +135,7 @@
     <script>
         // Fetch messages and populate the table
         function fetchMessages() {
-            fetch('http://localhost:3000/api/message')
+            fetch('https://r-design-backend.vercel.app/api/message')
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Failed to fetch messages');
