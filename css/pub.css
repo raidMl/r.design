@@ -1,35 +1,89 @@
 *{
     margin: 0;
     padding: 0;
-
+    box-sizing: border-box;
 }
+
 .footer {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #1a237e;
-    background: linear-gradient(to right, #2d48dfee, #350d91f5);
+    background: linear-gradient(135deg, #2d48df 0%, #350d91 100%);
     color: white;
-    padding: 10px;
+    padding: 15px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
 }
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
 .footer .home, .footer .profile {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
-.home,.profile{padding: 5px 20px;
-color: white;
-text-decoration: none;
 
+.home, .profile {
+    padding: 10px 25px;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
-.home:hover,.profile:hover{
-    background-color: #f0f0f033;
-    border-radius: 50px;
-    padding:5px 20px;
 
+.home::before, .profile::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease;
+    border-radius: 50%;
 }
-.activeprofile{
-    background-color: #f0f0f033;
-    border-radius: 50px;
-    padding:5px 20px;
+
+.home:hover, .profile:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.home:hover::before, .profile:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.activeprofile {
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+    border-radius: 25px;
+    padding: 10px 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
