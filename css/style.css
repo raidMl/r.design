@@ -167,6 +167,7 @@
             left: 0;
             right: 0;
             background: rgba(179, 8, 185, 0.95);
+                /* background: #2c092bb5; */
             backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-top: none;
@@ -183,7 +184,7 @@
 
         .navbar-collapse.show {
             transform: translateY(0);
-            opacity: 1;
+            opacity: 0.9;
             visibility: visible;
         }
 
@@ -407,7 +408,7 @@
     }
     
     .play-btn {
-        margin: 20px;
+        margin: 0 15px 0 0;
         width: 45px;
         transition: all 0.3s ease;
         filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
@@ -441,32 +442,20 @@
     
     .bottom-img {
         width: 100%;
-        height: auto;
-        display: block;
         position: absolute;
-        bottom: -2px;
+        bottom: 0;
         left: 0;
         z-index: 1;
-        margin: 0;
-        padding: 0;
         pointer-events: none;
-        object-fit: cover;
-        transition: opacity 0.3s ease;
-    }
-
-    /* Wave animation effect */
-    .bottom-img {
         animation: wave-float 6s ease-in-out infinite;
     }
 
     @keyframes wave-float {
-        0%, 100% { 
-            transform: translateX(0px) scaleX(1); 
-        }
-        50% { 
-            transform: translateX(-10px) scaleX(1.01); 
-        }
+        0%, 100% { transform: translateX(0px) scaleX(1); }
+        50% { transform: translateX(-10px) scaleX(1.01); }
     }
+    
+  
 
     /* Ensure banner content is above the wave */
     #banner .container {
@@ -496,6 +485,10 @@
         filter: drop-shadow(0 15px 40px rgba(0, 0, 0, 0.4));
     }
 
+        @media (max-width: 1024px) {
+            /* Adjustments for tablet if needed */
+        } 
+
     @media (max-width: 768px) {
         .hero-img {
             margin-top: 50px;
@@ -507,11 +500,7 @@
             text-align: center;
         }
         
-        .bottom-img {
-            position: relative;
-            bottom: auto;
-            margin-top: 30px;
-        }
+       
     }
 
     /* Add some bottom padding to banner to accommodate the wave */
@@ -1637,7 +1626,7 @@
     .navbar-collapse.collapsing {
         height: auto !important;
         overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+        transition: all 0.1s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
     }
 
     /* Enhanced mobile nav item hover effects */

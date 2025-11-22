@@ -56,11 +56,12 @@ async function sendMessageFunc(event) {
     // Send data to API
     try {
       // const response = await fetch('http://localhost:3000/api/order', {
-        const response = await fetch('https://r-design-backend.vercel.app/api/order', {
+        const response = await fetch('https://r-design-backend.vercel.app/api/order/', {
 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          
         },
         body: JSON.stringify(payload),
       });

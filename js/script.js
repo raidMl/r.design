@@ -211,124 +211,116 @@ function triggerEntranceAnimations() {
 }
 
 function change_color() {
-    // var select = document.sel.selectedIndex;
-    // var selected = document.sel[select].value;
-    var a = document.getElementById("themes").value;
+    var themesSelect = document.getElementById("themes");
+    if (!themesSelect) return;
+    
+    var a = themesSelect.value;
     var imgbackground = document.getElementsByClassName("imgBg");
     var testimonials = document.getElementsByClassName("testimonials");
-    
-    // Get navbar using class selector since it doesn't have an ID
     var navbar = document.querySelector('.navbar');
+    var navbarCollapse = document.querySelector('.navbar-collapse');
+    var footer = document.getElementById("footer");
+    var btnPrimaryId = document.getElementById("btn-primary");
+    var btnPrimaryClass = document.getElementsByClassName("btn-primary");
+    var fasIcons = document.getElementsByClassName("fas");
+    var options = themesSelect.getElementsByTagName("option");
     
-    console.log(imgbackground);
-    // console.log(a);
+    // Define gradients
+    const theme1Gradient = "linear-gradient(to right, rgb(132, 17, 136), rgb(68, 4, 62))";
+    const theme2Gradient = "linear-gradient(to right, rgb(45 68 185), rgb(2 1 23))";
+    const theme3Gradient = "linear-gradient(to right, #00889e, rgb(1 35 43))";
+    
+    let currentGradient;
+    let navbarGradient;
+    let collapseBackground;
+    let themeColor;
+    let optionBackground;
+
     if (a == 1) {
         // Theme 1 - Purple/Pink
-        document.getElementById("banner").style.backgroundImage = "linear-gradient(to right, rgb(132, 17, 136), rgb(68, 4, 62))";
+        currentGradient = theme1Gradient;
+        navbarGradient = "linear-gradient(135deg, rgba(132, 17, 136, 0.9), rgba(68, 4, 62, 0.9))";
+        collapseBackground = "rgba(179, 8, 185, 0.95)";
+        themeColor = "theme1";
+        optionBackground = "rgb(179, 8, 185)";
         
-        // Fix navbar color change
-        if (navbar) {
-            navbar.style.background = "linear-gradient(135deg, rgba(132, 17, 136, 0.9), rgba(68, 4, 62, 0.9))";
-            navbar.dataset.themeColor = "theme1"; // Store theme for scroll function
-        }
-        
-        document.getElementById("footer").style.backgroundImage = "linear-gradient(to right, rgb(132, 17, 136), rgb(68, 4, 62))";
-
-        // document.getElementByClassName("btn-primary").style.backgroundImage = "linear-gradient(to right, rgb(45 68 185), rgb(2 1 23))";
-        document.getElementById("btn-primary").style.backgroundImage = "linear-gradient(to right, rgb(132, 17, 136), rgb(68, 4, 62))";
-
-        var many = document.getElementsByClassName("fas");
-        for (i = 0; i < many.length; i++)
-            many[i].style.backgroundImage = "linear-gradient(to right, rgb(132, 17, 136), rgb(68, 4, 62))";
-
-        var btn = document.getElementsByClassName("btn-primary");
-        console.log(btn);
-        for (i = 0; i < btn.length; i++)
-            btn[i].style.backgroundImage = "linear-gradient(to right, rgb(132, 17, 136), rgb(68, 4, 62))";
-    
-        for (i = 0; i < imgbackground.length; i++) {
-            imgbackground[i].classList.remove("imgBg3");    
-            imgbackground[i].classList.remove("imgBg2");        
+        for (let i = 0; i < imgbackground.length; i++) {
+            imgbackground[i].classList.remove("imgBg3", "imgBg2");        
             imgbackground[i].classList.add("imgBg1");
         }
 
-        for (i = 0; i < testimonials.length; i++) { 
-            testimonials[i].classList.remove("testimonials2");
-            testimonials[i].classList.remove("testimonials3");
+        for (let i = 0; i < testimonials.length; i++) { 
+            testimonials[i].classList.remove("testimonials2", "testimonials3");
             testimonials[i].classList.add("testimonials1");
         }
     
     } else if (a == 2) {
         // Theme 2 - Blue
-        document.getElementById("banner").style.backgroundImage = "linear-gradient(to right, rgb(45 68 185), rgb(2 1 23))";
+        currentGradient = theme2Gradient;
+        navbarGradient = "linear-gradient(135deg, rgba(45, 68, 185, 0.9), rgba(2, 1, 23, 0.9))";
+        collapseBackground = "rgba(45, 68, 185, 0.95)";
+        themeColor = "theme2";
+        optionBackground = "rgb(45, 68, 185)";
 
-        // Fix navbar color change
-        if (navbar) {
-            navbar.style.background = "linear-gradient(135deg, rgba(45, 68, 185, 0.9), rgba(2, 1, 23, 0.9))";
-            navbar.dataset.themeColor = "theme2"; // Store theme for scroll function
-        }
-        
-        document.getElementById("footer").style.backgroundImage = "linear-gradient(to right, rgb(45 68 185), rgb(2 1 23))";
-
-        // document.getElementByClassName("btn-primary").style.backgroundImage = "linear-gradient(to right, rgb(45 68 185), rgb(2 1 23))";
-        document.getElementById("btn-primary").style.backgroundImage = "linear-gradient(to right, rgb(45 68 185), rgb(2 1 23))";
-
-        var many = document.getElementsByClassName("fas");
-        for (i = 0; i < many.length; i++)
-            many[i].style.backgroundImage = "linear-gradient(to right, rgb(45 68 185), rgb(2 1 23))";
-
-        var btn = document.getElementsByClassName("btn-primary");
-        console.log(btn);
-        for (i = 0; i < btn.length; i++)
-            btn[i].style.backgroundImage = "linear-gradient(to right, rgb(45 68 185), rgb(2 1 23))";
- 
-        for (i = 0; i < imgbackground.length; i++) {
-            imgbackground[i].classList.remove("imgBg3");    
-            imgbackground[i].classList.remove("imgBg1");        
+        for (let i = 0; i < imgbackground.length; i++) {
+            imgbackground[i].classList.remove("imgBg3", "imgBg1");        
             imgbackground[i].classList.add("imgBg2");
         }
 
-        for (i = 0; i < testimonials.length; i++) { 
-            testimonials[i].classList.remove("testimonials1");
-            testimonials[i].classList.remove("testimonials3");
+        for (let i = 0; i < testimonials.length; i++) { 
+            testimonials[i].classList.remove("testimonials1", "testimonials3");
             testimonials[i].classList.add("testimonials2");
         }
 
     } else if (a == 3) {
         // Theme 3 - Teal
-        document.getElementById("banner").style.backgroundImage = "linear-gradient(to right, #00889e, rgb(1 35 43))";
+        currentGradient = theme3Gradient;
+        navbarGradient = "linear-gradient(135deg, rgba(0, 136, 158, 0.9), rgba(1, 35, 43, 0.9))";
+        collapseBackground = "rgba(0, 136, 158, 0.95)";
+        themeColor = "theme3";
+        optionBackground = "#00889e";
 
-        // Fix navbar color change
-        if (navbar) {
-            navbar.style.background = "linear-gradient(135deg, rgba(0, 136, 158, 0.9), rgba(1, 35, 43, 0.9))";
-            navbar.dataset.themeColor = "theme3"; // Store theme for scroll function
-        }
-        
-        document.getElementById("footer").style.backgroundImage = "linear-gradient(to right, #00889e, rgb(1 35 43))";
-
-        var btn = document.getElementsByClassName("btn-primary");
-        console.log(btn);
-        for (i = 0; i < btn.length; i++)
-            btn[i].style.backgroundImage = "linear-gradient(to right, #00889e, rgb(1 35 43))";
-
-        var many = document.getElementsByClassName("fas");
-        for (i = 0; i < many.length; i++)
-            many[i].style.backgroundImage = "linear-gradient(to right, #00889e, rgb(1 35 43))";
-
-        for (i = 0; i < imgbackground.length; i++) {
-            imgbackground[i].classList.remove("imgBg1");    
-            imgbackground[i].classList.remove("imgBg2");        
+        for (let i = 0; i < imgbackground.length; i++) {
+            imgbackground[i].classList.remove("imgBg1", "imgBg2");        
             imgbackground[i].classList.add("imgBg3");
         }
         
-        for (i = 0; i < testimonials.length; i++) { 
-            testimonials[i].classList.remove("testimonials1");
-            testimonials[i].classList.remove("testimonials2");
+        for (let i = 0; i < testimonials.length; i++) { 
+            testimonials[i].classList.remove("testimonials1", "testimonials2");
             testimonials[i].classList.add("testimonials3");
         }
     }
 
-    // Note: removed the append line as it was causing errors
+    // Apply common styles
+    if (document.getElementById("banner")) 
+        document.getElementById("banner").style.backgroundImage = currentGradient;
+    
+    if (navbar) {
+        navbar.style.background = navbarGradient;
+        navbar.dataset.themeColor = themeColor;
+    }
+
+    if (navbarCollapse) {
+        navbarCollapse.style.background = collapseBackground;
+    }
+    
+    if (footer) footer.style.backgroundImage = currentGradient;
+
+    // Update specific button ID
+    if (btnPrimaryId) btnPrimaryId.style.backgroundImage = currentGradient;
+
+    // Update all buttons with class btn-primary
+    for (let i = 0; i < btnPrimaryClass.length; i++)
+        btnPrimaryClass[i].style.backgroundImage = currentGradient;
+
+    // Update icons
+    for (let i = 0; i < fasIcons.length; i++)
+        fasIcons[i].style.backgroundImage = currentGradient;
+
+    // Update options background
+    for (let i = 0; i < options.length; i++) {
+        options[i].style.background = optionBackground;
+    }
 }
 
 
@@ -534,6 +526,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.querySelector('.navbar');
     if (navbar && !navbar.dataset.themeColor) {
         navbar.dataset.themeColor = 'theme1'; // Set default theme
+    }
+    
+    // Initialize theme colors based on default selection
+    if (document.getElementById("themes")) {
+        change_color();
     }
 });
 
