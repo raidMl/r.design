@@ -240,7 +240,7 @@ function change_color() {
         // Theme 1 - Purple/Pink
         currentGradient = theme1Gradient;
         navbarGradient = "linear-gradient(135deg, rgba(132, 17, 136, 0.9), rgba(68, 4, 62, 0.9))";
-        collapseBackground = "rgba(179, 8, 185, 0.95)";
+        // collapseBackground = "rgba(179, 8, 185, 0.95)";
         themeColor = "theme1";
         optionBackground = "rgb(179, 8, 185)";
         
@@ -258,7 +258,7 @@ function change_color() {
         // Theme 2 - Blue
         currentGradient = theme2Gradient;
         navbarGradient = "linear-gradient(135deg, rgba(45, 68, 185, 0.9), rgba(2, 1, 23, 0.9))";
-        collapseBackground = "rgba(45, 68, 185, 0.95)";
+        // collapseBackground = "rgba(45, 68, 185, 0.95)";
         themeColor = "theme2";
         optionBackground = "rgb(45, 68, 185)";
 
@@ -276,7 +276,7 @@ function change_color() {
         // Theme 3 - Teal
         currentGradient = theme3Gradient;
         navbarGradient = "linear-gradient(135deg, rgba(0, 136, 158, 0.9), rgba(1, 35, 43, 0.9))";
-        collapseBackground = "rgba(0, 136, 158, 0.95)";
+        // collapseBackground = "rgba(0, 136, 158, 0.95)";
         themeColor = "theme3";
         optionBackground = "#00889e";
 
