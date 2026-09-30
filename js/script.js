@@ -330,7 +330,7 @@ function change_color() {
 
 // Enhanced typewriter effect with cursor
 const textElement = document.querySelector(".promo-title");
-const textToType = 'BEST DIGITAL AGENCY !';
+const textToType = 'DIGITAL AGENCY !';
 let textIndex = 0;
 let isDeleting = false;
 
